@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<title>Sucesso!</title>
+
+<link href="../static/css/cadastroSucesso.css"  th:src="@{css/cadastroSucesso.css}" rel="stylesheet" type="text/css" />
+
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous" />
+
+
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"></script>
+	
+	<script src= "https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.1/lottie_svg.js"></script>
+	
+</head>
+<body>
+
+<div class="fundo">
+
+	<div class="container-fluid ">
+	<div class="d-flex justify-content-center">
+			<div class="anime "></div>
+			</div>
+			<div style="display: block !important;">
+			<div class="d-flex justify-content-center">
+			<h1 style="color: #FFFFFF !important;">Agendamento realizado com sucesso!</h1>
+			</div>
+			<div class="d-flex justify-content-center">
+			<a th:href="@{/Agendamentos}"><button type="button" class="btn ms-3 btn-light botaologin" >Meus agendamentos</button></a>
+				</div>
+				
+	</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+let animationArea = document.querySelector('.anime');
+let animationObject = bodymovin.loadAnimation({
+    container: animationArea,
+    renderer: 'svg',
+    loop: true,
+    autoplay: true,
+    autoloadSegments: false,
+    path:'../static/images/check.json'
+});
+
+
+	
+</script>
+</body>
+</html>

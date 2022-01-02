@@ -1,0 +1,117 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+
+
+.custom-shape-divider-bottom-1640539824 {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	line-height: 0;
+}
+
+.custom-shape-divider-bottom-1640539824 svg {
+	position: relative;
+	display: block;
+	width: calc(100% + 1.3px);
+	height: 142px;
+	transform: rotateY(180deg);
+}
+
+.custom-shape-divider-bottom-1640539824 .shape-fill {
+	fill: #EDE7E7;
+}
+
+
+.fundo{
+	position: relative;
+	background-color: #0093E9;
+	background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+	 min-height: 100vh;
+}
+
+
+
+.anime{
+	
+	width: 400px !important;
+	height: 400px !important;
+	background-color: transparent;
+	display: flex !important;
+	margin-top: 0;
+	float: right;
+}
+
+.wrap {
+  flex-wrap: wrap;
+}
+
+.botoes{
+	height: 50px;
+	}
+
+
+.agende{
+	
+	width: 300px !important;
+	height: 250px;
+	display: inline;
+	font-family: 'Roboto', sans-serif;
+	color: #FFFFFF;
+	margin-top: 120px;
+	font-weight: bold;
+	font-size: 32px !important;
+}
+
+.sub{
+	font-weight: 100 ;
+	font-style: italic !important;
+	font-size: 18px !important;
+	width: 300px;
+	white-space: normal;
+}
+.bot{
+	 box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: transparent;
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-decoration: none;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+}
+
+.botaoAgenda {
+  border-color: #EDE7E7;
+  color: #fff;
+  background-image: -webkit-linear-gradient(45deg, #EDE7E7 50%, transparent 50%);
+  background-image: linear-gradient(45deg, #EDE7E7 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  border-radius: 16px !important;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
+.botaoAgenda:hover{
+	background-position: 0;
+	color: #1a1919;
+}

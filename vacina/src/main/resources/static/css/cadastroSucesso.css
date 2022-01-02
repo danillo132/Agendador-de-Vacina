@@ -1,0 +1,19 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+.fundo{
+	position: relative;
+	background-color: #0093E9;
+	background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+	 min-height: 100vh;
+}
+
+.botaologin{
+	border-radius: 16px !important;
+	background-color: #EDE7E7;
+		font-family: 'Roboto', sans-serif;
+	color: #1a1919;
+	height: 70px;
+	font-size: 22px !important;
+	width: 300px;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<meta charset="UTF-8">
+<title>Agendamentos</title>
+
+<link href="../static/css/Agendamentos.css"  th:src="@{css/Agendamentos.css}" rel="stylesheet" type="text/css" />
+<link
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	crossorigin="anonymous" />
+	
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	crossorigin="anonymous"></script>
+</head>
+<body>
+
+
+<div class="fundo">
+
+<div class="container-fluid">
+
+<div class="d-flex justify-content-end">
+ <a th:href="@{/logout}"><button type="button" class="btn btn-outline-light botaoSair">Sair</button></a>
+</div>
+  <nav class="fill">
+    <ul>
+      <li><a th:href="@{/Agendamentos}">Agendamentos</a></li>
+      <li><a th:href="@{/AgendarVacina}">Agendar dose</a></li>
+  		
+    </ul>
+    
+  </nav>
+ 
+</div>
+
+<div class="cards card-group">
+
+ <div th:each="d: ${dose1obj}">
+<div class="card" >
+
+  <img src="https://www.svgrepo.com/show/90603/hospital.svg" width="184" style="background-color: #4abc96;" height="200"  class="card-img-top" alt="UBS">
+  <div class="card-body" style="padding-top: 0; padding-bottom: 0;">
+    <h5 class="card-title">1º Dose Covid-19</h5>
+    <p><label>UBS: </label> <label class="card-text" th:text="${d.ubs}"> </label></p>
+    <p><label>Endereço: </label> <label class="card-text" th:text="${d.endereco}"> </label></p>
+    <p><label>Data: </label> <label class="card-text" th:text=" ${#dates.format(d.dataaplicacao, 'dd/MM/yyyy')}" > </label></p>
+    <p><label>Horário: </label> <label class="card-text" th:text=" ${d.horario}"> </label></p>
+    <p><label>Status: </label> <label class="card-text" th:text=" ${d.status}"> </label></p>
+    <p><label>Protocolo: </label> <label class="card-text" th:text=" ${d.protocolo}"> </label></p>
+    <a th:href="@{/editaragendamento/{idagendamento}(idagendamento=${d.id})}" class="btn btn-primary" style="margin-top: 25px !important; ">Editar</a>
+     <a  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger" style="margin-top: 25px !important;">Cancelar</a>
+  		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cancelar agendamento</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Deseja mesmo cancelar esse agendamento?
+      </div>
+      <div class="modal-footer">
+        <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+       <a th:href="@{/deletaragendamento/{idagendamento}(idagendamento=${d.id})}"> <button type="button" class="btn btn-danger">Cancelar</button></a> 
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+  </div>
+</div>
+<div th:each="j: ${dose2obj}">
+<div class="card" >
+  <img src="https://www.svgrepo.com/show/90603/hospital.svg" style="background-color: #4abc96;" width="184" height="200"  class="card-img-top" alt="UBS">
+  <div class="card-body" style="padding-top: 0; padding-bottom: 0;">
+   
+    <h5 class="card-title">2º Dose Covid-19</h5>
+    <p><label>UBS: </label> <label class="card-text" th:text="${j.ubs}"> </label></p>
+     <p><label>Endereço: </label> <label class="card-text" th:text="${j.endereco}"> </label></p>
+    <p><label>Data: </label> <label class="card-text" th:text=" ${#dates.format(j.dataaplicacao, 'dd/MM/yyyy')}" > </label></p>
+     <p><label>Horário: </label> <label class="card-text" th:text=" ${j.horario}"> </label></p>
+    <p><label>Status: </label> <label class="card-text" th:text=" ${j.status}"> </label></p>
+    <p><label>Protocolo: </label> <label class="card-text" th:text=" ${j.protocolo}"> </label></p>
+    <a th:href="@{/editaragendamento/{idagendamento}(idagendamento=${j.id})}" class="btn btn-primary" style="margin-top: 25px !important;">Editar</a>
+      <a  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger" style="margin-top: 25px !important;">Cancelar</a>
+  		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cancelar agendamento</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Deseja mesmo cancelar esse agendamento?
+      </div>
+      <div class="modal-footer">
+        <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+       <a th:href="@{/deletaragendamento/{idagendamento}(idagendamento=${j.id})}"> <button type="button" class="btn btn-danger">Cancelar</button></a> 
+      </div>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+<div  th:each="k: ${dose3obj}">
+<div class="card" >
+  <img src="https://www.svgrepo.com/show/90603/hospital.svg" style="background-color: #4abc96; border-bottom-color: #4abc96;" width="184" height="200"  class="card-img-top" alt="UBS">
+  <div class="card-body" style="padding-top: 0; padding-bottom: 0;">
+ 
+    <h5 class="card-title">3º Dose Covid-19</h5>
+    <p><label>UBS: </label> <label class="card-text" th:text="${k.ubs}"> </label></p>
+   <p><label>Endereço: </label> <label class="card-text" th:text="${k.endereco}"> </label></p>
+    <p><label>Data: </label> <label class="card-text" th:text=" ${#dates.format(k.dataaplicacao, 'dd/MM/yyyy')}" > </label></p>
+     <p><label>Horário: </label> <label class="card-text" th:text=" ${k.horario}"> </label></p>
+    <p><label>Status: </label> <label class="card-text" th:text=" ${k.status}"> </label></p>
+    <p><label>Protocolo: </label> <label class="card-text" th:text=" ${k.protocolo}"> </label></p>
+    <a th:href="@{/editaragendamento/{idagendamento}(idagendamento=${k.id})}" class="btn btn-primary" style="margin-top: 25px !important;">Editar</a>
+      <a  data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger" style="margin-top: 25px !important;">Cancelar</a>
+  		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cancelar agendamento</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Deseja mesmo cancelar esse agendamento?
+      </div>
+      <div class="modal-footer">
+        <button  type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+       <a th:href="@{/deletaragendamento/{idagendamento}(idagendamento=${k.id})}"> <button type="button" class="btn btn-danger">Cancelar</button></a> 
+      </div>
+    </div>
+  </div>
+</div>
+     </div>
+  </div>
+</div>
+</div>
+</div>
+
+</body>
+</html>
